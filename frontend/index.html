@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCheck — Security Multitool</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-text">CyberCheck</span>
+      <span class="logo-sub">Security Multitool</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="email">
+      <span class="tab-icon">✉</span> Email Analysis
+    </button>
+    <button class="tab-btn" data-tab="file">
+      <span class="tab-icon">⬡</span> File Scanner
+    </button>
+  </nav>
+
+  <main>
+    <!-- EMAIL TAB -->
+    <section id="tab-email" class="tab-content active">
+      <div class="upload-area" id="email-drop">
+        <div class="upload-inner">
+          <div class="upload-icon">✉</div>
+          <p class="upload-title">Drop .eml file here</p>
+          <p class="upload-sub">or <label for="email-input" class="browse-link">browse</label></p>
+          <input type="file" id="email-input" accept=".eml" hidden />
+          <p class="upload-hint">Headers · Routing · IPs · SPF/DKIM/DMARC · Phishing Detection</p>
+        </div>
+        <div class="file-selected" id="email-file-info" hidden>
+          <span class="file-name" id="email-file-name"></span>
+          <button class="clear-btn" id="email-clear">✕</button>
+        </div>
+      </div>
+      <button class="analyze-btn" id="email-submit" disabled>Analyze Email</button>
+      <div id="email-results"></div>
+    </section>
+
+    <!-- FILE TAB -->
+    <section id="tab-file" class="tab-content">
+      <div class="upload-area" id="file-drop">
+        <div class="upload-inner">
+          <div class="upload-icon">⬡</div>
+          <p class="upload-title">Drop any file here</p>
+          <p class="upload-sub">or <label for="file-input" class="browse-link">browse</label></p>
+          <input type="file" id="file-input" hidden />
+          <p class="upload-hint">Hashes · VirusTotal · YARA · Strings · Metadata · Magic Bytes</p>
+        </div>
+        <div class="file-selected" id="file-file-info" hidden>
+          <span class="file-name" id="file-file-name"></span>
+          <div class="hash-preview" id="file-hash-preview"></div>
+          <button class="clear-btn" id="file-clear">✕</button>
+        </div>
+      </div>
+      <button class="analyze-btn" id="file-submit" disabled>Scan File</button>
+      <div id="file-results"></div>
+    </section>
+  </main>
+
+  <script src="/static/components/email_results.js"></script>
+  <script src="/static/components/file_results.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Secrets
+backend/.env
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+*.egg-info/
+.pytest_cache/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude local memory
+.claude/

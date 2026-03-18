@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     virustotal_api_key: str = ""
     abuseipdb_api_key: str = ""
     ipinfo_token: str = ""
+    shodan_api_key: str = ""
 
     max_file_size_mb: int = 50
 
